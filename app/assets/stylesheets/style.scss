@@ -4,12 +4,20 @@ body {
   padding : 0;
   color: rgb(57,57,57);
 }
-
 $boxborder: rgb(203,204,217);
 $inputborder: rgb(237,237,237);
 $headercolor: rgb(77,140,189);
-
+$ctacolor: rgb(33,118,207);
 $bodypadding: 2em 15%;
+$borderradius:4px;
+
+.flat-button {
+    color: #fff;
+    background-color:$ctacolor;
+    border:0;
+    border-radius:$borderradius;
+}
+
 
 header {
     margin:0;
@@ -25,7 +33,7 @@ header {
 
 #url-builder {
     border: solid 1px $boxborder;
-    border-radius: 4px;
+    border-radius: $borderradius;
     margin: 2em;
     
     &:after {

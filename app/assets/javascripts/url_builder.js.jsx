@@ -1,7 +1,7 @@
 define(['react', 'components/core'], function (React, Core) {
   return React.createClass({
     render: function () {
-      return <div className="url-builder-content">
+      return <section className="url-builder-content">
         <Core.TextInput placeholder="Enter URL" title="What URL do you want to send people to?" optional="notOptional">
             This will be the base of your URL
         </Core.TextInput>
@@ -18,7 +18,12 @@ define(['react', 'components/core'], function (React, Core) {
         If you use a bunch of links all in the same spot, and all the fields above are identical, you can use this field to add more detail. For example, one link might be <em>header</em> while your second link is <em>footer</em>.
         </Core.TextInput>
         <Core.TextInput title="Campaign Term" optional="optional">If you're using this link for search ads, and also want to track the search terms you're running your ad on, add a campaign term.</Core.TextInput>
-      </div>;
+        
+    <div className="final-form-section">
+        <button className="cta">Build my link!</button>
+    </div>
+        
+      </section>;
     }
   });
 });

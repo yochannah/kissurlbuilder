@@ -16,8 +16,17 @@ $borderradius:4px;
     background-color:$ctacolor;
     border:0;
     border-radius:$borderradius;
+    padding:1em 4em;
+    text-transform:uppercase;
 }
 
+.clearfix { //sigh
+    &:after {
+        content:" ";
+        display:table;
+        clear:both;
+    }
+}
 
 header {
     margin:0;
@@ -27,20 +36,26 @@ header {
     text-align:center;
 }
 
+section {
+    @extend .clearfix;
+    border: solid 1px $boxborder;
+    border-radius: $borderradius;
+    margin: 2em;
+}
+
 .intro {
     padding: $bodypadding;
 }
 
-#url-builder {
-    border: solid 1px $boxborder;
-    border-radius: $borderradius;
-    margin: 2em;
-    
-    &:after {
-        content:" ";
-        display:table;
-        clear:both;
-    }
+input[type=text] {
+    border-radius:2px;
+    border: solid 1px $inputborder;
+    padding:1em;
+    width:100%;
+    box-sizing:border-box;
+}
+
+#url-builder {    
     
     .inputBox {
         width:50%;
@@ -51,13 +66,6 @@ header {
         //TODO: equal height coloumns with the input at the bottom.
         // This may not be in the css layer - JS might be easier?
     
-        input[type=text] {
-            border-radius:2px;
-            border: solid 1px $inputborder;
-            padding:1em;
-            width:100%;
-            box-sizing:border-box;
-        }
     
         h3 {
             &.optional:after {
@@ -68,6 +76,29 @@ header {
                 content:'*';
             }        
         }
+    }    
+}
+
+.cta, .free-trial {
+    @extend .flat-button;
+}
+
+.final-form-section{
+    @extend .clearfix;
+    clear:both;
+    background-color:rgb(224,232,238);
+    .cta {
+        @extend .flat-button;
+        float:right;
+        margin:1em;
     }
+    padding: 1em;
+}
+
+footer {
+    text-align:center;
+    padding:$bodypadding;
+    color:#fff;
+    background-color:rgb(27,34,41);
 }
 // TODO: media queries for narrower and wider screens than a 13" macbook with developer tools eating half the screen

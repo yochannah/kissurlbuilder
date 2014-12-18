@@ -1,21 +1,65 @@
 body {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin:0;
+  padding : 0;
+  color: rgb(57,57,57);
 }
 
 $boxborder: rgb(203,204,217);
 $inputborder: rgb(237,237,237);
+$headercolor: rgb(77,140,189);
 
-.inputBox {
-    width:50%;
-    box-sizing:border-box;
-    float:left;
-    padding:1em;
-    input[type=text] {
-        border-radius:2px;
-        border: solid 1px $inputborder;
+$bodypadding: 2em 15%;
+
+header {
+    margin:0;
+    padding: $bodypadding;
+    background-color:$headercolor;
+    color:#fff;
+    text-align:center;
+}
+
+.intro {
+    padding: $bodypadding;
+}
+
+#url-builder {
+    border: solid 1px $boxborder;
+    border-radius: 4px;
+    margin: 2em;
+    
+    &:after {
+        content:" ";
+        display:table;
+        clear:both;
+    }
+    
+    .inputBox {
+        width:50%;
+        box-sizing:border-box;
+        float:left;
         padding:1em;
-        width:100%;
+        
+        //TODO: equal height coloumns with the input at the bottom.
+        // This may not be in the css layer - JS might be easier?
+    
+        input[type=text] {
+            border-radius:2px;
+            border: solid 1px $inputborder;
+            padding:1em;
+            width:100%;
             box-sizing:border-box;
-
+        }
+    
+        h3 {
+            &.optional:after {
+                content:' (optional)';
+            }
+            
+            &.notOptional:after {
+                content:'*';
+            }        
+        }
     }
 }
+// TODO: media queries for narrower and wider screens than a 13" macbook with developer tools eating half the screen

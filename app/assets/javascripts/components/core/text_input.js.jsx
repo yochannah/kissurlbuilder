@@ -13,9 +13,16 @@ define(['react'], function (React) {
         this.props.onChange(event.target.value);
       }
     },
-
+    
     render: function () {
-      return <input className={this.props.className} onChange={this.handleChange} type="text" value={this.state.value} name={this.props.name} />;
+      var placeholder = this.props.placeholder || this.props.title;
+      return (
+      <div className="inputBox">
+          <h3 className={this.props.optional}>{this.props.title}</h3>
+          <p>{this.props.children}</p>
+	      <input className={this.props.className} onChange={this.handleChange} type="text" value={this.state.value} name={this.props.name} placeholder={placeholder} />
+	  </div>
+      );
     }
   });
 });

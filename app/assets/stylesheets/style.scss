@@ -1,0 +1,21 @@
+body {
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+$boxborder: rgb(203,204,217);
+$inputborder: rgb(237,237,237);
+
+.inputBox {
+    width:50%;
+    box-sizing:border-box;
+    float:left;
+    padding:1em;
+    input[type=text] {
+        border-radius:2px;
+        border: solid 1px $inputborder;
+        padding:1em;
+        width:100%;
+            box-sizing:border-box;
+
+    }
+}

@@ -1,5 +1,7 @@
-define(['components/core/text_input'], function (TextInput) {
+define(['components/core/text_input','components/core/submit_footer','components/core/url_builder_result'], function (TextInput, SubmitFooter, UrlResult) {
   return {
-    TextInput: TextInput
+    TextInput: TextInput,
+    SubmitFooter: SubmitFooter,
+    UrlResult : UrlResult
   };
 });

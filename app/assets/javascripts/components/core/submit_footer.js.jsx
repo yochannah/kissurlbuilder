@@ -7,7 +7,7 @@ define(['react'], function (React) {
     },
 
     handleClick: function () {
-        console.log('call the generate link function of the parent when i can figure out how');
+        console.log('call the generate link function of the parent eventually - or will it all be inline?');
     },
     
     render: function () {

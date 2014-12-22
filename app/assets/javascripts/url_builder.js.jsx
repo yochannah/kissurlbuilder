@@ -1,11 +1,17 @@
 define(['react', 'components/core','grouped_inputs'], function (React, Core, GroupedInputs) {
   return React.createClass({
-    generateLink : function() {
-        console.log('I am doing something wrong here as can not figure out how to call this from a child element');
+    handleChange : function(value, ref) {
+        var state = {};
+        state[ref] = value;
+        this.setState(state);
+    },
+    inputs : {
+        required : ['base', 'medium','source','name'],
+        optional : ['content','term']
     },
     render: function () {
       return <main>
-        <GroupedInputs />
+        <GroupedInputs onChange={this.handleChange} />
         <Core.UrlResult />
       </main>
     }

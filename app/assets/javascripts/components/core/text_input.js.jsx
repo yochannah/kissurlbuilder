@@ -10,7 +10,6 @@ define(['react'], function (React) {
       this.setState({value: event.target.value});
 
       if (this.props.onChange) {
-        console.log(event.target.value);
         this.props.onChange(event.target.value, this.props.inputRef);
       }
     },

@@ -16,7 +16,7 @@ define(['react', 'components/core','grouped_inputs'], function (React, Core, Gro
     buildUrl : function() {
         var campaignUrl = this.state.base + "?";
         for(var k in this.state) {
-            if(k !== 'base' && k !== 'campaignUrl') {
+            if(k !== 'base' && k !== 'campaignUrl' && this.state[k] !== "") { // this is getting complex...
                 campaignUrl += "&" + k + "=" + this.state[k];
             }
         }

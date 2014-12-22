@@ -10,7 +10,7 @@ define(['react'], function (React) {
     render: function () {
       return <section className="url-builder-result">
         <p>Copy and paste your campaign link!</p>
-        <input type="text" /><button className="cta">Copy Link to Clipboard</button>
+        <input type="text" value={this.props.campaignUrl} /><button className="cta">Copy Link to Clipboard</button>
       </section>;
     }
   });

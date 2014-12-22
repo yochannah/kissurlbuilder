@@ -1,7 +1,7 @@
 define(['react','components/core'], function (React, Core) {
   return React.createClass({
     handleChange : function(state, props) {
-        console.log(state,props);
+    console.log(state,props)
         this.props.onChange(state, props);
     },
     render: function () {
